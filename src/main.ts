@@ -24,6 +24,6 @@ async function bootstrap() {
   app.useGlobalInterceptors(new TransformInterceptor());
   // 注册全局错误的过滤器
   app.useGlobalFilters(new HttpExceptionFilter());
-  await app.listen(8000);
+  await app.listen(3000);
 }
 bootstrap();
