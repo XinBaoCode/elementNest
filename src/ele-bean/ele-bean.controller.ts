@@ -39,7 +39,7 @@ export class EleBeanController {
     return this.eleBeanService.findOne(id);
   }
 
-  @Patch(':id')
+  @Patch('/:id')
   update(@Param('id') id: string, @Body() updateEleBeanDto: UpdateEleBeanDto) {
     return this.eleBeanService.update(id, updateEleBeanDto);
   }
