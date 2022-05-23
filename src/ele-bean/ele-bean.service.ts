@@ -8,26 +8,26 @@ import { EleBean } from './entities/ele-bean.entity';
 @Injectable()
 export class EleBeanService {
   constructor(
-    @InjectRepository(EleBean) private usersRepository: Repository<EleBean>,
+    @InjectRepository(EleBean) private eleBeanRepository: Repository<EleBean>,
   ) {}
 
   create(createEleBeanDto: CreateEleBeanDto) {
-    return this.usersRepository.save(createEleBeanDto);
+    return this.eleBeanRepository.save(createEleBeanDto);
   }
 
   findAll() {
-    return `This action returns all eleBean`;
+    return this.eleBeanRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} eleBean`;
+  findOne(id: string) {
+    return this.eleBeanRepository.findOne({ where: { id: id } });
   }
 
-  update(id: number, updateEleBeanDto: UpdateEleBeanDto) {
-    return `This action updates a #${id} eleBean`;
+  update(id: string, updateEleBeanDto: UpdateEleBeanDto) {
+    return this.eleBeanRepository.update(id, updateEleBeanDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} eleBean`;
+  remove(id: string) {
+    return this.eleBeanRepository.softDelete(id);
   }
 }

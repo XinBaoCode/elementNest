@@ -8,8 +8,12 @@ import { EleBeanModule } from './ele-bean/ele-bean.module';
   imports: [
     EleBeanModule,
     TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: 'element.db',
+      type: 'mysql', // 数据库类型
+      host: 'localhost', // 数据库ip地址
+      port: 3306, // 端口
+      username: 'root', // 登录名
+      password: '1314', // 密码
+      database: 'element', // 数据库名称
       autoLoadEntities: true,
       synchronize: true,
     }),
@@ -17,4 +21,4 @@ import { EleBeanModule } from './ele-bean/ele-bean.module';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}

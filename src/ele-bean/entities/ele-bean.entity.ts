@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity('eleBean')
 export class EleBean {
   @PrimaryGeneratedColumn('uuid')
-  id: number;
+  id: string;
   @Column('int')
   qq: number;
   @Column('text')

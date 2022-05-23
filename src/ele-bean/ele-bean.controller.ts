@@ -29,16 +29,16 @@ export class EleBeanController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.eleBeanService.findOne(+id);
+    return this.eleBeanService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateEleBeanDto: UpdateEleBeanDto) {
-    return this.eleBeanService.update(+id, updateEleBeanDto);
+    return this.eleBeanService.update(id, updateEleBeanDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.eleBeanService.remove(+id);
+    return this.eleBeanService.remove(id);
   }
 }
