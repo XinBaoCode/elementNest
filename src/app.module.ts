@@ -15,7 +15,7 @@ import { EleBeanModule } from './ele-bean/ele-bean.module';
       password: '1314', // 密码
       database: 'element', // 数据库名称
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: false,
     }),
   ],
   controllers: [AppController],
